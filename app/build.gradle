@@ -18,6 +18,14 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+    productFlavors {
+        free {
+            applicationId "com.example.udacity.finalproject.free"
+        }
+        paid {
+            applicationId "com.example.udacity.finalproject.paid"
+        }
+    }
 }
 
 dependencies {
@@ -28,9 +36,10 @@ dependencies {
     compile project(":jokes")
     compile project(":jokesdisplay")
 
-
-    compile 'com.android.support:appcompat-v7:25.0.1'
-    compile 'com.google.android.gms:play-services-ads:10.0.1'
-    compile 'com.google.code.findbugs:jsr305:2.0.1'
     compile project(path: ':jokesbackend', configuration: 'android-endpoints')
+    compile 'com.android.support:appcompat-v7:25.0.1'
+    compile 'com.google.code.findbugs:jsr305:2.0.1'
+    compile 'com.android.support:support-v4:25.0.1'
+    testCompile 'junit:junit:4.12'
+    freeCompile 'com.google.android.gms:play-services-ads:10.0.1'
 }
